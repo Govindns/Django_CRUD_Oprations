@@ -1,0 +1,22 @@
+{%extends 'testapp/base.html'%}
+{% block body_block%}
+<h1>Welcome to Employee List</h1>
+<table border="2">
+    <th>Number</th>
+    <th>Name</th>
+    <th>Salary</th>
+    <th>Address</th>
+    <th>Action</th>
+    {% for i in form%}
+    <tr>
+        <td>{{i.no}}</td>
+        <td>{{i.name}}</td>
+        <td>{{i.sal}}</td>
+        <td>{{i.addr}}</td>
+        <td><a href="update/{{i.id}}">Update</a>&nbsp;&nbsp;
+            <a href="delete/{{i.id}}">Delete</a></td>
+    </tr>
+    {%endfor%}
+</table>
+<a id="btn" href="/insert" class="btn btn-primary">Insert Employee</a>
+{%endblock%}
