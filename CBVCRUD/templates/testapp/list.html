@@ -1,0 +1,22 @@
+{%extends 'testapp/base.html'%}
+{%block body_block%}
+<h1>List of Books</h1>
+<table border="3">
+    <th>Title</th>
+    <th>Author</th>
+    <th>Pages</th>
+    <th>price</th>
+    <th>Action</th>
+    {% for i in book%}
+    <tr>
+        <td>{{i.title}}</td>
+        <td>{{i.author}}</td>
+        <td>{{i.pages}}</td>
+        <td>{{i.price}}</td>
+        <td><a href="/update/{{i.id}}">Update</a>
+            <a href="/delete/{{i.id}}">Delete</a></td>
+    </tr>
+    {%endfor%}
+</table>
+<a href="/insert" class="btn btn-primary" id="btn">Insert</a>
+{%endblock%}
